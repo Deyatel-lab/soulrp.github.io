@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'RDR-Lino';
+    src: url('fonts/RDRLino-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Hapna';
+    src: url('fonts/HapnaSlabSerif-DemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'RDR-Gothica';
+    src: url('fonts/RDRGothica-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'RDR-Catalogue';
+    src: url('fonts/RDRCatalogueBold-Bold.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212; /* Темный фон */
+    color: #e2b13c;           /* Золотой текст */
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-block {
+    text-align: center;
+    border: 2px solid #8b0000; /* Красная рамка */
+    padding: 50px;
+    border-radius: 20px;
+}
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Soul.jpg');
+    background-size: cover;    /* Растянуть на весь экран */
+    background-position: center; /* Центрировать картинку */
+    padding-top: 120px;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+h1 {
+    font-size: 80px;
+    letter-spacing: 5px;
+    color: #e2b13c; /* Золотой цвет */
+    text-transform: uppercase;
+    margin-top: 50px;
+    font-family: 'RDR-lino', serif;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+/* Обращаемся ко всем ссылкам внутри меню */
+.menu a {
+    color: #fff;              /* Белый цвет */
+    text-decoration: none;     /* Убираем подчеркивание */
+    text-transform: uppercase; /* Все буквы заглавные */
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;       /* Плавная анимация при наведении */
+    font-family: 'Hapna', serif;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Эффект при наведении на пункт меню */
+.menu a:hover {
+    color: #e2b13c;            /* Золотой при наведении */
+    text-shadow: 0 0 10px rgba(226, 177, 60, 0.5); /* Свечение */
+}
+.header {
+    position: absolute; /* ВАЖНО: блок "всплывает" над остальными */
+    top: 0;
+    left: 0;
+    width: 100%;        /* Растягиваем по ширине */
+    padding: 20px 0;
+    z-index: 10;        /* Кладём слой поверх картинки */
+}
+.btn-main {
+    background: #8b0000;
+    padding: 15px 40px;
+    color: #fff;
+    border: 2px solid #e2b13c;
+    margin-top: 50px;
+    transition: 0.4s;
+    font-family: 'Hapna', serif;
+
+}
+.about {
+    background: #1a1a1a;
+    padding: 80px 20px;
+}
+.about h2 {
+    color: #e2b13c;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-family: 'RDR-lino', serif;
+    text-align: center;
+}
+.about p {
+    color: #ccc;
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: 'Hapna', serif;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.feature-card {
+    background: #1a1a1a;
+    border: 1px solid #8b0000;
+    padding: 25px;
+    width: 300px;
+    text-align: center;
+}
+.feature-card:hover {
+    color: #e2b13c;
+    border-color: #e2b13c;
+    transform: translateY(-10px);
+}
+.feature-card h3 {
+    color: #e2b13c;
+    font-size: 45px;
+    margin-bottom: 15px;
+    font-family: 'RDR-Catalogue', serif;
+}
+.feature-card p {
+    color: #ccc;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'Hapna', serif;
+}
+
+.join-guide {
+    background: #1a1a1a;
+    padding: 80px 20px;
+}
+.join-guide ol {
+    padding-left: 20px;
+    max-width: 600px; margin: 0 auto;
+}
+.join-guide li {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #918f8f;
+    padding-left: 0px;
+    font-family: 'Hapna', serif;
+}
+.join-guide h2 {
+    color: #e2b13c;
+    font-size: 90px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    font-family: 'RDR-catalogue', serif;
+    text-align: center;
+}
+.join-guide ol {
+    list-style: none; /* Убираем стандартные цифры */
+    counter-reset: my-counter; /* Включаем свой счетчик */
+}
+.join-guide li {
+    counter-increment: my-counter;
+    position: relative;
+    padding-left: 40px; /* Место для цифры */
+}
+.join-guide li::before {
+    content: counter(my-counter) "."; /* Рисуем цифру сами */
+    color: #e2b13c; /* Делаем её золотой */
+    font-family: 'RDR-Lino', serif; /* Или Gothica */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.lore-section {
+    gap: 40px;
+    margin-top: 80px;      
+    text-align: center;    
+    padding: 20px;
+}
+.lore-section h2 {
+    color: #e2b13c;
+    font-size: 70px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-family: 'RDR-Lino', serif;
+}
+
+.lore-grid {
+    display: flex;         
+    gap: 40px;            
+    justify-content: center; 
+    flex-wrap: wrap;      
+    margin-top: 40px;
+}
+
+.lore-item h3 {
+    color: #e2b13c;
+    font-size: 35px;
+    margin-bottom: 15px;
+    font-family: 'RDR-Catalogue', serif;
+}
+
+.lore-item p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Hapna', serif;
+}
+.lore-item {
+    border: 4px double #8b0000; 
+    background: #1a1a1a;
+    transform: rotate(-1deg);   
+    width: 350px;               
+    padding: 30px;              
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: 0.5s;           /
+}
+
+.lore-item:hover {
+    transform: rotate(0deg) scale(1.05); 
+    border-color: #e2b13c;                
+}
+.icon {
+    font-size: 50px;
+    color: #e2b13c;
+}
+.separator {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e2b13c, transparent);
+    margin: 50px auto;
+}
+
+.card-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px rgba(226, 177, 60, 0.5));
+}
